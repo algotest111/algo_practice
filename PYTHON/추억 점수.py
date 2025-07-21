@@ -15,3 +15,18 @@ def solution(name, yearning, photo):
     return result
 
 # PYTHON_2
+def solution(name, yearning, photo):
+    answer = []
+    score_dict = dict(zip(name, yearning))
+    score = 0
+    for j in photo:
+        for i in j:
+            if i in name:
+                score += score_dict[i]
+            else : 
+                continue
+        answer.append(score)
+        score = 0
+    return answer
+    
+    
