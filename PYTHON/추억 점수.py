@@ -29,4 +29,3 @@ def solution(name, yearning, photo):
         score = 0
     return answer
     
-    
