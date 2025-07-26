@@ -1,7 +1,19 @@
 # 2025. 07. 26
 
 # PYTHON_1
-
+def solution(numbers):
+    answer = []
+    n = len(numbers)
+    for i in range(n):
+        found = False
+        for j in range(i + 1, n):
+            if numbers[j] > numbers[i]:
+                answer.append(numbers[j])
+                found = True
+                break
+        if not found:
+            answer.append(-1)
+    return answer
 
 # PYTHON_2
 def solution(numbers):
