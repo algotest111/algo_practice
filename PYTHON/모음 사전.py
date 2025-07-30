@@ -4,7 +4,7 @@
 
 
 # PYTHON_2
-from itertools
+from itertools import *
 
 def solution(word):
     combin = ['A', 'E', 'I', 'O', 'U']
@@ -17,3 +17,4 @@ def solution(word):
     a = sorted(all_words)
     answer = a.index(word)
     return answer + 1
+
