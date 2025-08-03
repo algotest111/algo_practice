@@ -9,3 +9,9 @@ join (
 order by YEAR, YEAR_DEV
 
 -- SOL_2
+select d_sub.YEAR,  d_sub.max_size - D_main.SIZE_OF_COLONY as YEAR_DEV, D_main.ID
+from ECOLI_DATA D_main join (select year(DIFFERENTIATION_DATE) as YEAR, max(SIZE_OF_COLONY) as max_size
+                            from ECOLI_DATA 
+                            group by YEAR) d_sub
+on year(D_main.DIFFERENTIATION_DATE) = d_sub.YEAR
+order by YEAR, YEAR_DEV;

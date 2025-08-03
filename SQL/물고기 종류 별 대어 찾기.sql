@@ -10,3 +10,10 @@ where (a.FISH_TYPE, a.LENGTH) in (
 order by a.ID
 
 -- SOL_2
+select ID, FISH_NAME, LENGTH
+from FISH_INFO i join FISH_NAME_INFO n
+on i.FISH_TYPE = n.FISH_TYPE
+where (i.FISH_TYPE, LENGTH) in (select FISH_TYPE, max(LENGTH) AS LENGTH
+    from FISH_INFO 
+    group by FISH_TYPE
+    having LENGTH > 10)
