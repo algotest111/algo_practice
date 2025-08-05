@@ -10,3 +10,16 @@ order by (a.TOTAL_ORDER + b.TOTAL_ORDER) desc
 limit 3
 
 -- SOL_2
+select j.FLAVOR 
+from (select *
+        from FIRST_HALF 
+
+        UNION all
+
+        select *
+        from JULY) j
+        
+group by j.FLAVOR
+having sum(j.TOTAL_ORDER) 
+order by sum(j.TOTAL_ORDER)  desc
+limit 3;
